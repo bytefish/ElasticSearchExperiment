@@ -2,7 +2,7 @@
 
 ## Project ##
 
-This project is a sample for [Elasticsearch] with .NET. The application parses the Quality Controlled Local Climatological Data (QCLCD) 
+This project is a sample for [Elasticsearch] with .NET. The application parses the [Quality Controlled Local Climatological Data (QCLCD)] 
 from March 2015 and bulk inserts it into a Elasticsearch instance. It doesn't deal with Clustering and only inserts on a single node.
 
 I have used [Kibana] to create some visualizations and [TinyCsvParser] to parse the CSV data.
