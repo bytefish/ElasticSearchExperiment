@@ -20,17 +20,7 @@ namespace ElasticSearchExample.Elastic.Model
         [String]
         public string Location { get; set; }
 
-        [GeoPoint(LatLon = true,
-            GeoHash = true,
-            GeoHashPrefix = true,
-            GeoHashPrecision = 7,
-            Validate = true,
-            ValidateLatitude = true,
-            ValidateLongitude = true,
-            Normalize = true,
-            NormalizeLatitude = true,
-            NormalizeLongitude = true,
-            PrecisionStep = 5)]
+        [GeoPoint]
         public GeoLocation GeoLocation { get; set; }
     }
 }

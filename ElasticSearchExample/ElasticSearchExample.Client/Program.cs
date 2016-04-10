@@ -28,6 +28,8 @@ namespace ElasticSearchExample.Client
 
             var client = new ElasticSearchClient<ElasticLocalWeatherDataType>(connectionString, "weather_data");
 
+            var a = client.CreateIndex();
+
             foreach(var batch in GetData().Batch(100)) 
             {
                 var response = client.BulkInsert(batch);

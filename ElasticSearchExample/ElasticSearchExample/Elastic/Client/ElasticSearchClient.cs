@@ -31,15 +31,28 @@ namespace ElasticSearchExample.Elastic.Client
         {
         }
 
+        public ICreateIndexResponse CreateIndex()
+        {
+            var response = Client.IndexExists(IndexName);
+            if (response.Exists)
+            {
+                return null;
+            }
+            return Client.CreateIndex(IndexName, index =>
+                index.Mappings(ms =>
+                    ms.Map<TEntity>(x => x.AutoMap())));
+        }
+
         public IBulkResponse BulkInsert(IEnumerable<TEntity> entities)
         {
             var request = new BulkDescriptor();
-
+            
             foreach (var entity in entities)
             {
-                request.Index<TEntity>(op => op
-                        .Index(IndexName)
+                request
+                    .Index<TEntity>(op => op
                         .Id(Guid.NewGuid().ToString())
+                        .Index(IndexName)
                         .Document(entity));
             }
 
