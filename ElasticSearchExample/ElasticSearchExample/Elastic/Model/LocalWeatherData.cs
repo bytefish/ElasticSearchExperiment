@@ -8,7 +8,7 @@ namespace ElasticSearchExample.Elastic.Model
 {
     public class LocalWeatherData
     {
-        [Nested]
+        [Nested(IncludeInParent=true)]
         public Station Station { get; set; }
 
         [Date]

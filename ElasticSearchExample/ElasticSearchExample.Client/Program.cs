@@ -26,10 +26,13 @@ namespace ElasticSearchExample.Client
         {
             var connectionString = new ConnectionString("http", "localhost", 9200);
 
+            // Create a new Client, that writes the Weater Data and creates the Index weather_data:
             var client = new ElasticSearchClient<ElasticLocalWeatherDataType>(connectionString, "weather_data");
 
-            var a = client.CreateIndex();
+            // Creates the Index, if neccessary:
+            client.CreateIndex();
 
+            // Bulk Insert Data:
             foreach(var batch in GetData().Batch(100)) 
             {
                 var response = client.BulkInsert(batch);
