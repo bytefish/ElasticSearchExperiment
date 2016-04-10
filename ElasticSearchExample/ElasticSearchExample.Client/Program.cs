@@ -41,11 +41,14 @@ namespace ElasticSearchExample.Client
 
         private static IEnumerable<ElasticLocalWeatherDataType> GetData()
         {
+            // Create Lookup Dictionary to map stations from:
             IDictionary<string, CsvStationType> stations =
                 GetStations("C:\\Users\\philipp\\Downloads\\csv\\201503station.txt")
                 .ToDictionary(station => station.WBAN, station => station);
 
+            // Create the flattened Elasticsearch entry:
             return GetLocalWeatherData("C:\\Users\\philipp\\Downloads\\csv\\201503hourly.txt")
+                .Where(x => stations.ContainsKey(x.WBAN))
                 .Select(x =>
                 {
                     var station = stations[x.WBAN];
