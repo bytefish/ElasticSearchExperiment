@@ -3,7 +3,6 @@
 
 using Elasticsearch.Net;
 using ElasticSearchExample.Elastic.Client.Settings;
-using log4net;
 using Nest;
 using System;
 using System.Collections.Generic;
@@ -14,8 +13,6 @@ namespace ElasticSearchExample.Elastic.Client
     public class ElasticSearchClient<TEntity>
         where TEntity : class
     {
-        private static ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
         public readonly string IndexName;
 
         protected readonly IElasticClient Client;
@@ -26,8 +23,8 @@ namespace ElasticSearchExample.Elastic.Client
             Client = client;
         }
 
-        public ElasticSearchClient(ConnectionString connectionString, string indexName)
-            : this(CreateClient(connectionString), indexName)
+        public ElasticSearchClient(Uri uri, string indexName)
+            : this(CreateClient(uri), indexName)
         {
         }
 
@@ -38,9 +35,7 @@ namespace ElasticSearchExample.Elastic.Client
             {
                 return null;
             }
-            return Client.CreateIndex(IndexName, index =>
-                index.Mappings(ms =>
-                    ms.Map<TEntity>(x => x.AutoMap())));
+            return Client.CreateIndex(IndexName, index => index.Mappings(ms => ms.Map<TEntity>(x => x.AutoMap())));
         }
 
         public IBulkResponse BulkInsert(IEnumerable<TEntity> entities)
@@ -59,10 +54,9 @@ namespace ElasticSearchExample.Elastic.Client
             return Client.Bulk(request);
         }
 
-        private static IElasticClient CreateClient(ConnectionString connectionString)
+        private static IElasticClient CreateClient(Uri uri)
         {
-            var node = new UriBuilder(connectionString.Scheme, connectionString.Host, connectionString.Port);
-            var connectionPool = new SingleNodeConnectionPool(node.Uri);
+            var connectionPool = new SingleNodeConnectionPool(uri);
             var connectionSettings = new ConnectionSettings(connectionPool);
 
             return new ElasticClient(connectionSettings);

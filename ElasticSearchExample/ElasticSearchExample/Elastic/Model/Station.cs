@@ -8,16 +8,16 @@ namespace ElasticSearchExample.Elastic.Model
 {
     public class Station
     {
-        [String]
+        [Text]
         public string WBAN { get; set; }
 
-        [String]
+        [Text]
         public string Name { get; set; }
 
-        [String]
+        [Text]
         public string State { get; set; }
 
-        [String]
+        [Text]
         public string Location { get; set; }
 
         [GeoPoint]

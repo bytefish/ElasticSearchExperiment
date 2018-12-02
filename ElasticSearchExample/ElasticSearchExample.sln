@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchExample", "ElasticSearchExample\ElasticSearchExample.csproj", "{8CABF57D-9828-4E20-BB3E-6BDCC877C021}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchExample.Console", "ElasticSearchExample.Client\ElasticSearchExample.Console.csproj", "{047A0DA2-7FB2-4F47-8728-E0A04BDED30A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticSearchExample.ConsoleApp", "ElasticSearchExample.Client\ElasticSearchExample.ConsoleApp.csproj", "{047A0DA2-7FB2-4F47-8728-E0A04BDED30A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {184EF630-68A2-4CAE-806D-0A7CDECCC0D7}
 	EndGlobalSection
 EndGlobal

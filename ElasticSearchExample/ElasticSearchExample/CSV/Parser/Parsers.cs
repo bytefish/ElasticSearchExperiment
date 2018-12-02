@@ -13,7 +13,7 @@ namespace ElasticSearchExample.CSV.Parser
         {
             get
             {
-                CsvParserOptions csvParserOptions = new CsvParserOptions(true, new[] { '|' });
+                CsvParserOptions csvParserOptions = new CsvParserOptions(true, '|');
 
                 return new CsvParser<Station>(csvParserOptions, new StationMapper());
             }
@@ -23,7 +23,7 @@ namespace ElasticSearchExample.CSV.Parser
         {
             get
             {
-                CsvParserOptions csvParserOptions = new CsvParserOptions(true, new[] { ',' });
+                CsvParserOptions csvParserOptions = new CsvParserOptions(true, ',');
 
                 return new CsvParser<LocalWeatherData>(csvParserOptions, new LocalWeatherDataMapper());
             }

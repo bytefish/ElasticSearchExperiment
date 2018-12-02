@@ -14,16 +14,16 @@ namespace ElasticSearchExample.Elastic.Model
         [Date]
         public DateTime DateTime { get; set; }
 
-        [Number]
+        [Number(NumberType.Float)]
         public float Temperature { get; set; }
 
-        [Number]
+        [Number(NumberType.Float)]
         public float WindSpeed { get; set; }
 
-        [Number]
+        [Number(NumberType.Float)]
         public float StationPressure { get; set; }
 
-        [String]
+        [Text]
         public string SkyCondition { get; set; }
     }
 }
