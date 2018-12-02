@@ -21,8 +21,8 @@ The data is available at:
 
 ## Result ##
 
-<a href="https://raw.githubusercontent.com/bytefish/ElasticSearchExperiment/master/ElasticSearchExample/img/kibana.png">
-	<img src="https://raw.githubusercontent.com/bytefish/ElasticSearchExperiment/master/ElasticSearchExample/img/kibana.png" width="50%" height="50%" alt="Kibana Visualization of the Average Temperature" />
+<a href="https://raw.githubusercontent.com/bytefish/ElasticSearchExperiment/master/ElasticSearchExample/img/screenshot.jpg">
+	<img src="https://raw.githubusercontent.com/bytefish/ElasticSearchExperiment/master/ElasticSearchExample/img/screenshot.jpg" width="50%" height="50%" alt="Kibana Visualization of the Average Temperature" />
 </a>
 
 [TinyCsvParser]: https://github.com/bytefish/TinyCsvParser/
