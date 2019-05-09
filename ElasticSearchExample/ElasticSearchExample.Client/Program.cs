@@ -8,7 +8,6 @@ using System.Text;
 using ElasticSearchExample.Converter;
 using ElasticSearchExample.CSV.Parser;
 using ElasticSearchExample.Elastic.Client;
-using ElasticSearchExample.Elastic.Client.Settings;
 using ElasticSearchExample.Utils;
 using TinyCsvParser;
 using CsvStationType = ElasticSearchExample.CSV.Model.Station;
@@ -38,9 +37,7 @@ namespace ElasticSearchExample.ConsoleApp
 
                 if (response.Errors)
                 {
-                    response.TryGetServerErrorReason(out string reason);
-
-                    Console.Error.WriteLine($"Bulk Write failed. Reason: {reason}");
+                    Console.Error.WriteLine($"Bulk Write failed. Reason: {response.OriginalException.Message}");
                 }
             }
         }

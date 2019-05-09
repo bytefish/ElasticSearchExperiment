@@ -28,20 +28,20 @@ namespace ElasticSearchExample.Elastic.Client
         {
         }
 
-        public ICreateIndexResponse CreateIndex()
+        public CreateIndexResponse CreateIndex()
         {
             var response = Client.IndexExists(IndexName);
             if (response.Exists)
             {
                 return null;
             }
-            return Client.CreateIndex(IndexName, index => index.Mappings(ms => ms.Map<TEntity>(x => x.AutoMap())));
+            return Client.CreateIndex(IndexName, index => index.Map<TEntity>(ms => ms.AutoMap()));
         }
 
-        public IBulkResponse BulkInsert(IEnumerable<TEntity> entities)
+        public BulkResponse BulkInsert(IEnumerable<TEntity> entities)
         {
             var request = new BulkDescriptor();
-            
+
             foreach (var entity in entities)
             {
                 request
