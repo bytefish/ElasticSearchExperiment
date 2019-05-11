@@ -13,13 +13,7 @@ This source code is released with a blog post over at:
 
 * [https://bytefish.de/blog/elasticsearch_net/](https://bytefish.de/blog/elasticsearch_net/)
 
-The example was based on Elasticsearch 2, but the example is available for:
-
-* Elasticsearch 2
-* Elasticsearch 6
-* Elasticsearch 7
-
-Please see the Releases at: 
+The code targets Elasticsearch 7, but the example is also available for previous Elasticsearch versions:
 
 * [https://github.com/bytefish/ElasticSearchExperiment/releases](https://github.com/bytefish/ElasticSearchExperiment/releases)
 
