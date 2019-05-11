@@ -7,6 +7,23 @@ from March 2015 and bulk inserts it into a Elasticsearch instance. It doesn't de
 
 I have used [Kibana] to create some visualizations and [TinyCsvParser] to parse the CSV data.
 
+## Article ##
+
+This source code is released with a blog post over at:
+
+* [https://bytefish.de/blog/elasticsearch_net/](https://bytefish.de/blog/elasticsearch_net/)
+
+The example was based on Elasticsearch 2, but the example is available for:
+
+* Elasticsearch 2
+* Elasticsearch 6
+* Elasticsearch 7
+
+Please see the Releases at: 
+
+* [https://github.com/bytefish/ElasticSearchExperiment/releases](https://github.com/bytefish/ElasticSearchExperiment/releases)
+
+
 ## Dataset ##
 
 The data is the [Quality Controlled Local Climatological Data (QCLCD)]: 
